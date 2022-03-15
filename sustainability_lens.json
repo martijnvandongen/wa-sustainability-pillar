@@ -1,0 +1,395 @@
+{
+    "schemaVersion": "2021-11-01",
+    "name": "Sustainability Pillar",
+    "description": "The Sustainability pillar focuses on environmental impacts, especially energy consumption and efficiency, since they are important levers for architects to inform direct action to reduce resource usage.",
+    "pillars": [
+        {
+            "id": "SUS",
+            "name": "Sustainability",
+            "questions": [
+                {
+                    "id": "sust_q1",
+                    "title": "How do you select Regions to support your sustainability goals?",
+                    "description": "Choose Regions near Amazon renewable energy projects and Regions where the grid has a published carbon intensity that is lower than other locations (or Regions).",
+                    "choices": [
+                        {
+                            "id": "choice1",
+                            "title": "Region selection",
+                            "helpfulResource": {
+                                "displayText": "Choose Regions near Amazon renewable energy projects and Regions where the grid has a published carbon intensity that is lower than other locations (or Regions)"
+                            },
+                            "improvementPlan": {
+                                "displayText": "Choose Regions near Amazon renewable energy projects and Regions where the grid has a published carbon intensity that is lower than other locations (or Regions)"
+                            }
+                        }
+                    ],
+                    "riskRules": [
+                        {
+                            "condition": "choice1",
+                            "risk": "NO_RISK"
+                        },
+                        {
+                            "condition": "default",
+                            "risk": "HIGH_RISK"
+                        }
+                    ]
+                },
+                {
+                    "id": "sust_q2",
+                    "title": "How do you take advantage of user behavior patterns to support your sustainability goals?",
+                    "description": "The way users consume your workloads and other resources can help you identify improvements to meet sustainability goals. Scale infrastructure to continually match user load and ensure that only the minimum resources required to support users are deployed. Align service levels to customer needs. Position resources to limit the network required for users to consume them. Remove existing, unused assets. Identify created assets that are unused and stop generating them. Provide your team members with devices that support their needs with minimized sustainability impact.",
+                    "choices": [
+                        {
+                            "id": "choice1",
+                            "title": "Scale infrastructure with user load",
+                            "helpfulResource": {
+                                "displayText": "Identify periods of low or no utilization and scale resources to eliminate excess capacity and improve efficiency."
+                            },
+                            "improvementPlan": {
+                                "displayText": "Identify periods of low or no utilization and scale resources to eliminate excess capacity and improve efficiency."
+                            }
+                        },
+                        {
+                            "id": "choice2",
+                            "title": "Align SLAs with sustainability goals",
+                            "helpfulResource": {
+                                "displayText": "Define and update service level agreements (SLAs) such as availability or data retention periods to minimize the number of resources required to support your workload while continuing to meet business requirements. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Define and update service level agreements (SLAs) such as availability or data retention periods to minimize the number of resources required to support your workload while continuing to meet business requirements. "
+                            }
+                        },
+                        {
+                            "id": "choice3",
+                            "title": "Eliminate creation and maintenance of unused assets",
+                            "helpfulResource": {
+                                "displayText": "Analyze application assets (such as pre-compiled reports, data sets, and static images) and asset access patterns to identify redundancy, underutilization, and potential decommission targets. Consolidate generated assets with redundant content (for example, monthly reports with overlapping or common data sets and outputs) to eliminate the resources consumed when duplicating outputs. Decommission unused assets (for example, images of products that are no longer sold) to free consumed resources and reduce the number of resources used to support the workload."
+                            },
+                            "improvementPlan": {
+                                "displayText": "Analyze application assets (such as pre-compiled reports, data sets, and static images) and asset access patterns to identify redundancy, underutilization, and potential decommission targets. Consolidate generated assets with redundant content (for example, monthly reports with overlapping or common data sets and outputs) to eliminate the resources consumed when duplicating outputs. Decommission unused assets (for example, images of products that are no longer sold) to free consumed resources and reduce the number of resources used to support the workload."
+                            }
+                        },
+                        {
+                            "id": "choice4",
+                            "title": "Optimize geographic placement of workloads for user locations",
+                            "helpfulResource": {
+                                "displayText": "Analyze network access patterns to identify where your customers are connecting from geographically. Select Regions and services that reduce the distance that network traffic must travel to decrease the total network resources required to support your workload. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Analyze network access patterns to identify where your customers are connecting from geographically. Select Regions and services that reduce the distance that network traffic must travel to decrease the total network resources required to support your workload. "
+                            }
+                        },
+                        {
+                            "id": "choice5",
+                            "title": "Optimize team member resources for activities performed",
+                            "helpfulResource": {
+                                "displayText": "Optimize resources provided to team members to minimize the sustainability impact while supporting their needs. For example, perform complex operations, such as rendering and compilation, on highly utilized shared cloud desktops instead of on under-utilized high-powered single user systems. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Optimize resources provided to team members to minimize the sustainability impact while supporting their needs. For example, perform complex operations, such as rendering and compilation, on highly utilized shared cloud desktops instead of on under-utilized high-powered single user systems. "
+                            }
+                        }
+                    ],
+                    "riskRules": [
+                        {
+                            "condition": "choice1 && choice2 && choice3 && choice4 && choice5",
+                            "risk": "NO_RISK"
+                        },
+                        {
+                            "condition": "choice1 || choice2 || choice3 || choice4 || choice5",
+                            "risk": "MEDIUM_RISK"
+                        },
+                        {
+                            "condition": "default",
+                            "risk": "HIGH_RISK"
+                        }
+                    ]
+                },
+                {
+                    "id": "sust_q3",
+                    "title": "How do you take advantage of software and architecture patterns to support your sustainability goals?",
+                    "description": "Implement patterns for performing load smoothing and maintaining consistent high utilization of deployed resources to minimize the resources consumed. Components might become idle from lack of use because of changes in user behavior over time. Revise patterns and architecture to consolidate under-utilized components to increase overall utilization. Retire components that are no longer required. Understand the performance of your workload components, and optimize the components that consume the most resources. Be aware of the devices your customers use to access your services, and implement patterns to minimize the need for device upgrades. ",
+                    "choices": [
+                        {
+                            "id": "choice1",
+                            "title": "Optimize software and architecture for asynchronous and scheduled jobs",
+                            "helpfulResource": {
+                                "displayText": "Use efficient software designs and architectures to minimize the average resources required per unit of work. Implement mechanisms that result in even utilization of components to reduce resources that are idle between tasks and minimize the impact of load spikes. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Use efficient software designs and architectures to minimize the average resources required per unit of work. Implement mechanisms that result in even utilization of components to reduce resources that are idle between tasks and minimize the impact of load spikes."
+                            }
+                        },
+                        {
+                            "id": "choice2",
+                            "title": "Remove or refactor workload components with low or no use",
+                            "helpfulResource": {
+                                "displayText": "Monitor workload activity to identify changes in utilization of individual components over time. Remove components that are unused and no longer required, and refactor components with little utilization, to limit wasted resources. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Monitor workload activity to identify changes in utilization of individual components over time. Remove components that are unused and no longer required, and refactor components with little utilization, to limit wasted resources"
+                            }
+                        },
+                        {
+                            "id": "choice3",
+                            "title": "Optimize areas of code that consume the most time or resources",
+                            "helpfulResource": {
+                                "displayText": "Monitor workload activity to identify application components that consume the most resources. Optimize the code that runs within these components to minimize resource usage while maximizing performance. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Monitor workload activity to identify application components that consume the most resources. Optimize the code that runs within these components to minimize resource usage while maximizing performance."
+                            }
+                        },
+                        {
+                            "id": "choice4",
+                            "title": "Optimize impact on customer devices and equipment",
+                            "helpfulResource": {
+                                "displayText": "Understand the devices and equipment your customers use to consume your services, their expected lifecycle, and the financial and sustainability impact of replacing those components. Implement software patterns and architectures to minimize the need for customers to replace devices and upgrade equipment. For example, implement new features using code that is backwards compatible with older hardware and operating system versions, or manage the size of payloads so they don’t exceed the storage capacity of the target device. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Understand the devices and equipment your customers use to consume your services, their expected lifecycle, and the financial and sustainability impact of replacing those components. Implement software patterns and architectures to minimize the need for customers to replace devices and upgrade equipment. For example, implement new features using code that is backwards compatible with older hardware and operating system versions, or manage the size of payloads so they don’t exceed the storage capacity of the target device."
+                            }
+                        },
+                        {
+                            "id": "choice5",
+                            "title": "Use software patterns and architectures that best support data access and storage patterns",
+                            "helpfulResource": {
+                                "displayText": "Understand how data is used within your workload, consumed by your users, transferred, and stored. Select technologies to minimize data processing and storage requirements. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Understand how data is used within your workload, consumed by your users, transferred, and stored. Select technologies to minimize data processing and storage requirements."
+                            }
+                        }
+                    ],
+                    "riskRules": [
+                        {
+                            "condition": "choice1 && choice2 && choice3 && choice4 && choice5",
+                            "risk": "NO_RISK"
+                        },
+                        {
+                            "condition": "choice1 || choice2 || choice3 || choice4 || choice5",
+                            "risk": "MEDIUM_RISK"
+                        },
+                        {
+                            "condition": "default",
+                            "risk": "HIGH_RISK"
+                        }
+                    ]
+                },
+                {
+                    "id": "sust_q4",
+                    "title": "How do you take advantage of data access and usage patterns to support your sustainability goals?",
+                    "description": "Implement data management practices to reduce the provisioned storage required to support your workload, and the resources required to use it. Understand your data, and use storage technologies and configurations that best support the business value of the data and how it’s used. Lifecycle data to more efficient, less performant storage when requirements decrease, and delete data that’s no longer required. ",
+                    "choices": [
+                        {
+                            "id": "choice1",
+                            "title": "Implement a data classification policy",
+                            "helpfulResource": {
+                                "displayText": "Classify data to understand its significance to business outcomes. Use this information to determine when you can move data to more energy-efficient storage or safely delete it. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Classify data to understand its significance to business outcomes. Use this information to determine when you can move data to more energy-efficient storage or safely delete it."
+                            }
+                        },
+                        {
+                            "id": "choice2",
+                            "title": "Use technologies that support data access and storage patterns",
+                            "helpfulResource": {
+                                "displayText": "Use storage that best supports how your data is accessed and stored to minimize the resources provisioned while supporting your workload. For example, solid state devices (SSDs) are more energy intensive than magnetic drives and should be used only for active data use cases. Use energy-efficient, archival-class storage for infrequently accessed data. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Use storage that best supports how your data is accessed and stored to minimize the resources provisioned while supporting your workload. For example, solid state devices (SSDs) are more energy intensive than magnetic drives and should be used only for active data use cases. Use energy-efficient, archival-class storage for infrequently accessed data."
+                            }
+                        },
+                        {
+                            "id": "choice3",
+                            "title": "Use lifecycle policies to delete unnecessary data",
+                            "helpfulResource": {
+                                "displayText": "Manage the lifecycle of all your data and automatically enforce deletion timelines to minimize the total storage requirements of your workload. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Manage the lifecycle of all your data and automatically enforce deletion timelines to minimize the total storage requirements of your workload."
+                            }
+                        },
+                        {
+                            "id": "choice4",
+                            "title": "Minimize over-provisioning in block storage",
+                            "helpfulResource": {
+                                "displayText": "To minimize total provisioned storage, create block storage with size allocations that are appropriate for the workload. Use elastic volumes to expand storage as data grows without having to resize storage attached to compute resources. Regularly review elastic volumes and shrink over-provisioned volumes to fit the current data size. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "To minimize total provisioned storage, create block storage with size allocations that are appropriate for the workload. Use elastic volumes to expand storage as data grows without having to resize storage attached to compute resources. Regularly review elastic volumes and shrink over-provisioned volumes to fit the current data size. "
+                            }
+                        },
+                        {
+                            "id": "choice5",
+                            "title": "Remove unneeded or redundant data",
+                            "helpfulResource": {
+                                "displayText": "Duplicate data only when necessary to minimize total storage consumed. Use backup technologies that deduplicate data at the file and block level. Limit the use of Redundant Array of Independent Drives (RAID) configurations except where required to meet SLAs. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Duplicate data only when necessary to minimize total storage consumed. Use backup technologies that deduplicate data at the file and block level. Limit the use of Redundant Array of Independent Drives (RAID) configurations except where required to meet SLAs."
+                            }
+                        },
+                        {
+                            "id": "choice6",
+                            "title": "Use shared file systems or object storage to access common data",
+                            "helpfulResource": {
+                                "displayText": "Adopt shared storage and single sources of truth to avoid data duplication and reduce the total storage requirements of your workload. Fetch data from shared storage only as needed. Detach unused volumes to free resources. Minimize data movement across networks: Use shared storage and access data from regional data stores to minimize the total networking resources required to support data movement for your workload. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Adopt shared storage and single sources of truth to avoid data duplication and reduce the total storage requirements of your workload. Fetch data from shared storage only as needed. Detach unused volumes to free resources. Minimize data movement across networks: Use shared storage and access data from regional data stores to minimize the total networking resources required to support data movement for your workload."
+                            }
+                        },
+                        {
+                            "id": "choice7",
+                            "title": "Back up data only when difficult to recreate",
+                            "helpfulResource": {
+                                "displayText": "To minimize storage consumption, only back up data that has business value or is required to satisfy compliance requirements. Examine backup policies and exclude ephemeral storage that doesn’t provide value in a recovery scenario."
+                            },
+                            "improvementPlan": {
+                                "displayText": "To minimize storage consumption, only back up data that has business value or is required to satisfy compliance requirements. Examine backup policies and exclude ephemeral storage that doesn’t provide value in a recovery scenario."
+                            }
+                        }
+                    ],
+                    "riskRules": [
+                        {
+                            "condition": "choice1 && choice2 && choice3 && choice4 && choice5 && choice6 && choice7",
+                            "risk": "NO_RISK"
+                        },
+                        {
+                            "condition": "choice1 || choice2 || choice3 || choice4 || choice5 || choice6 || choice7",
+                            "risk": "MEDIUM_RISK"
+                        },
+                        {
+                            "condition": "default",
+                            "risk": "HIGH_RISK"
+                        }
+                    ]
+                },
+                {
+                    "id": "sust_q5",
+                    "title": "How do your hardware management and usage practices support your sustainability goals?",
+                    "description": "Look for opportunities to reduce workload sustainability impacts by making changes to your hardware management practices. Minimize the amount of hardware needed to provision and deploy, and select the most efficient hardware for your individual workload. ",
+                    "choices": [
+                        {
+                            "id": "choice1",
+                            "title": "Use the minimum amount of hardware to meet your needs",
+                            "helpfulResource": {
+                                "displayText": "Using the capabilities of the cloud, you can make frequent changes to your workload implementations. Update deployed components as your needs change. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Using the capabilities of the cloud, you can make frequent changes to your workload implementations. Update deployed components as your needs change."
+                            }
+                        },
+                        {
+                            "id": "choice2",
+                            "title": "Use instance types with the least impact",
+                            "helpfulResource": {
+                                "displayText": "Continually monitor the release of new instance types and take advantage of energy efficiency improvements, including those instance types designed to support specific workloads such as machine learning training and inference, and video transcoding. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Continually monitor the release of new instance types and take advantage of energy efficiency improvements, including those instance types designed to support specific workloads such as machine learning training and inference, and video transcoding."
+                            }
+                        },
+                        {
+                            "id": "choice3",
+                            "title": "Use managed services",
+                            "helpfulResource": {
+                                "displayText": "Managed services shift responsibility for maintaining high average utilization, and sustainability optimization of the deployed hardware, to AWS. Use managed services to distribute the sustainability impact of the service across all tenants of the service, reducing your individual contribution. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Managed services shift responsibility for maintaining high average utilization, and sustainability optimization of the deployed hardware, to AWS. Use managed services to distribute the sustainability impact of the service across all tenants of the service, reducing your individual contribution."
+                            }
+                        },
+                        {
+                            "id": "choice4",
+                            "title": "Optimize your use of GPUs",
+                            "helpfulResource": {
+                                "displayText": "Graphics processing units (GPUs) can be a source of high-power consumption, and many GPU workloads are highly variable, such as rendering, transcoding, and machine learning training and modeling. Only run GPUs instances for the time needed, and decommission them with automation when not required to minimize resources consumed. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Graphics processing units (GPUs) can be a source of high-power consumption, and many GPU workloads are highly variable, such as rendering, transcoding, and machine learning training and modeling. Only run GPUs instances for the time needed, and decommission them with automation when not required to minimize resources consumed."
+                            }
+                        }
+                    ],
+                    "riskRules": [
+                        {
+                            "condition": "choice1 && choice2 && choice3 && choice4",
+                            "risk": "NO_RISK"
+                        },
+                        {
+                            "condition": "choice1 || choice2 || choice3 || choice4",
+                            "risk": "MEDIUM_RISK"
+                        },
+                        {
+                            "condition": "default",
+                            "risk": "HIGH_RISK"
+                        }
+                    ]
+                },
+                {
+                    "id": "sust_q6",
+                    "title": "How do your development and deployment processes support your sustainability goals?",
+                    "description": "Look for opportunities to reduce your sustainability impact by making changes to your development, test, and deployment practices. ",
+                    "choices": [
+                        {
+                            "id": "choice1",
+                            "title": "Adopt methods that can rapidly introduce sustainability improvements",
+                            "helpfulResource": {
+                                "displayText": "Test and validate potential improvements before deploying them to production. Account for the cost of testing when calculating potential future benefit of an improvement. Develop low-cost testing methods to enable delivery of small improvements."
+                            },
+                            "improvementPlan": {
+                                "displayText": "Test and validate potential improvements before deploying them to production. Account for the cost of testing when calculating potential future benefit of an improvement. Develop low-cost testing methods to enable delivery of small improvements."
+                            }
+                        },
+                        {
+                            "id": "choice2",
+                            "title": "Keep your workload up to date",
+                            "helpfulResource": {
+                                "displayText": "Up-to-date operating systems, libraries, and applications can improve workload efficiency and enable easier adoption of more efficient technologies. Up-to-date software might also include features to measure the sustainability impact of your workload more accurately, as vendors deliver features to meet their own sustainability goals. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Up-to-date operating systems, libraries, and applications can improve workload efficiency and enable easier adoption of more efficient technologies. Up-to-date software might also include features to measure the sustainability impact of your workload more accurately, as vendors deliver features to meet their own sustainability goals."
+                            }
+                        },
+                        {
+                            "id": "choice3",
+                            "title": "Increase utilization of build environments",
+                            "helpfulResource": {
+                                "displayText": "Use automation and infrastructure as code to bring pre-production environments up when needed and take them down when not used. A common pattern is to schedule periods of availability that coincide with the working hours of your development team members. Hibernation is a useful tool to preserve state and rapidly bring instances online only when needed. Use instance types with burst capacity, spot instances, elastic database services, containers, and other technologies to align development and test capacity with use. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Use automation and infrastructure as code to bring pre-production environments up when needed and take them down when not used. A common pattern is to schedule periods of availability that coincide with the working hours of your development team members. Hibernation is a useful tool to preserve state and rapidly bring instances online only when needed. Use instance types with burst capacity, spot instances, elastic database services, containers, and other technologies to align development and test capacity with use."
+                            }
+                        },
+                        {
+                            "id": "choice4",
+                            "title": "Use managed device farms for testing",
+                            "helpfulResource": {
+                                "displayText": "Managed device farms spread the sustainability impact of hardware manufacturing and resource usage across multiple tenants. Managed device farms offer diverse device types so you can support older, less popular hardware, and avoid customer sustainability impact from unnecessary device upgrades. "
+                            },
+                            "improvementPlan": {
+                                "displayText": "Managed device farms spread the sustainability impact of hardware manufacturing and resource usage across multiple tenants. Managed device farms offer diverse device types so you can support older, less popular hardware, and avoid customer sustainability impact from unnecessary device upgrades."
+                            }
+                        }
+                    ],
+                    "riskRules": [
+                        {
+                            "condition": "choice1 && choice2 && choice3 && choice4",
+                            "risk": "NO_RISK"
+                        },
+                        {
+                            "condition": "choice1 || choice2 || choice3 || choice4",
+                            "risk": "MEDIUM_RISK"
+                        },
+                        {
+                            "condition": "default",
+                            "risk": "HIGH_RISK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
